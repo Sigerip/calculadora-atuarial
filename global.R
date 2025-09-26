@@ -16,8 +16,8 @@ carregar_tabua_estatica <- function(nome_tabua) {
   
   # Mapear nomes das tábuas para arquivos CSV
   arquivo <- switch(nome_tabua,
-                    "AT 2000 Masculina" = "at_2000_masc.csv",
-                    "AT 2000 Feminina"  = "at_2000_fem.csv",
+                    "AT 2000 Masculina" = "dados/at_2000_masc.csv",
+                    "AT 2000 Feminina"  = "dados/at_2000_fem.csv",
                     NULL)
 
   # Ler o arquivo e calcula a tábua
@@ -92,7 +92,7 @@ carregar_tabua_geracional <- function(nome_tabua) {
   
   # Mapear nomes das tábuas para arquivos CSV
   arquivo <- switch(nome_tabua,
-                    "SSA Masculina (Geracional)" = "SSA_masc.csv",
+                    "SSA Masculina (Geracional)" = "dados/SSA_masc.csv",
                     NULL)
   
   # Lê o arquivo e cálcula a tábua
