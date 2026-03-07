@@ -21,6 +21,15 @@ ui <- fluidPage(
             "Nome completo",
             placeholder = "Digite seu nome"
           ),
+
+          radioButtons(
+            "sexo",
+            "Sexo",
+            choices = c(
+              "Masculino",
+              "Feminino"
+            )
+          ),
           
           numericInput(
             "idade",
