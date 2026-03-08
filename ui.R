@@ -19,15 +19,8 @@ ui <- fluidPage(
       value = "pg00",
       
       div(class = "resultado-container",
-          
-          # título da aplicação
-          
-          h2("Simulador de Seguro de Vida"),
-          
-          
-          # card principal
-          
-          div(class = "card-resultado",
+
+          div(class = "card-resultado", # card principal
               fluidRow(
                   column(
                     width = 4,
@@ -104,30 +97,17 @@ ui <- fluidPage(
             style = "text-align:center;",
             
             p(
-              "Precisa de ajuda? ",
+              "Quer saber mais sobre nosso projeto?",
               tags$a(
-                "Clique aqui",
-                href = "#",
+                "Clique aqui e nos siga no Instagram!",
+                href = "https://www.instagram.com/oiatuarial.ufpb/",
                 target = "_blank"
               )
             )
           ),
           
           
-          br(),
-          
-          
-          # disclaimer inferior
-          
-          div(class = "card-explicacao",
-              
-              p(
-                tags$b("Aviso importante: "),
-                "Este simulador oferece estimativas baseadas nas informações ",
-                "fornecidas. Os resultados não constituem oferta ou recomendação ",
-                "de contratação de seguro."
-              )
-          )
+          br()
           
       )
     ),
@@ -205,7 +185,7 @@ ui <- fluidPage(
           width = 4,
           
           tags$img(
-            src="pg03_familia.jpg",
+            src="pg00_familia.png", #a mesma da pg 00
             width="100%"
           )
         ),
