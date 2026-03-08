@@ -15,6 +15,124 @@ ui <- fluidPage(
     id = "paginas",
 
     tabPanel(
+      "Início",
+      value = "pg00",
+      
+      div(class = "resultado-container",
+          
+          # título da aplicação
+          
+          h2("Simulador de Seguro de Vida"),
+          
+          
+          # card principal
+          
+          div(class = "card-resultado",
+              fluidRow(
+                  column(
+                    width = 4,
+                    
+                    tags$img(
+                      src = "pg00_familia.png",
+                      width = "100%"
+                    )
+                  ),
+                  
+                  column(
+                    width = 8,
+                    h2("Bem-vindo ao"),
+                    h1("Simulador de Seguro de Vida!")
+                  )
+              )
+          ),
+          
+          br(),
+          
+          div(class = "card-explicacao", # card explicação
+              
+              h3("Aqui você poderá:"),
+              
+              tags$ul(class = "lista-explicacao",
+                      
+                      tags$li(
+                        "Simular o capital necessário para ",
+                        tags$b("garantir a segurança financeira"),
+                        " da sua família em caso de falecimento."
+                      ),
+                      
+                      tags$li(
+                        "Calcular valores de ",
+                        tags$b("seguro de vida"),
+                        " adequados para sua necessidade."
+                      ),
+                      
+                      tags$li(
+                        "Comparar os custos de diferentes ",
+                        tags$b("planos de seguro de vida.")
+                      )
+              ),
+              
+              br(),
+              
+              div(
+                class = "alert alert-warning",
+                
+                tags$b("Aviso: "),
+                "Este simulador oferece estimativas baseadas nas informações ",
+                "que você fornecer. Para uma análise detalhada e personalizada, ",
+                "consulte um corretor de seguros profissional."
+              )
+          ),
+          
+          br(),
+          
+          div( # botão iniciar
+            style = "text-align:center;",
+            
+            actionButton(
+              "iniciar_simulacao",
+              "Iniciar Simulação",
+              class = "btn-navegacao"
+            )
+          ),
+          
+          br(),
+          
+          
+          # link de ajuda
+          div(
+            style = "text-align:center;",
+            
+            p(
+              "Precisa de ajuda? ",
+              tags$a(
+                "Clique aqui",
+                href = "#",
+                target = "_blank"
+              )
+            )
+          ),
+          
+          
+          br(),
+          
+          
+          # disclaimer inferior
+          
+          div(class = "card-explicacao",
+              
+              p(
+                tags$b("Aviso importante: "),
+                "Este simulador oferece estimativas baseadas nas informações ",
+                "fornecidas. Os resultados não constituem oferta ou recomendação ",
+                "de contratação de seguro."
+              )
+          )
+          
+      )
+    ),
+
+    tabPanel(
       "Seus dados",
       value = "pg01",
 
