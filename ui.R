@@ -2,63 +2,93 @@ ui <- fluidPage(
   
   titlePanel("Simulador de Seguro de Vida"),
   
+  tags$head(
+    tags$style(HTML("
+      
+      body {
+        background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      
+      .form-card {
+        background-color: rgba(255,255,255,0.95);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        max-width: 500px;
+        margin: auto;
+        margin-top: 80px;
+      }
+      
+      .titulo-card {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+    "))
+  ),
+
   tabsetPanel(
 
     id = "paginas",
+
     
     tabPanel(
       "Seus dados",
       value = "pg01",
-      
-      fluidRow(
-        column(
-          width = 6,
-          
-          h3("Informações pessoais"),
-          
-          textInput(
-            "nome",
-            "Nome completo",
-            placeholder = "Digite seu nome"
-          ),
 
-          radioButtons(
-            "sexo",
-            "Sexo",
-            choices = c(
-              "Masculino",
-              "Feminino"
-            )
+      div(
+        class = "form-card",
+        
+        h2("Informações pessoais", class = "titulo-card"),
+        
+        textInput(
+          "nome",
+          "Nome completo",
+          placeholder = "Digite seu nome"
+        ),
+
+        radioButtons(
+          "sexo",
+          "Sexo",
+          choices = c(
+            "Masculino",
+            "Feminino"
           ),
-          
-          numericInput(
-            "idade",
-            "Idade",
-            value = NA,
-            min = 18,
-            max = 100
-          ),
-          
-          numericInput(
-            "renda",
-            "Renda mensal (R$)",
-            value = NA,
-            min = 0,
-            step = 500
-          ),
-          
-          br(),
-          
-          actionButton(
-            "calcular",
-            "Calcular capital segurado ideal",
-            class = "btn-primary"
-          )
-          
+          inline = TRUE
+        ),
+        
+        numericInput(
+          "idade",
+          "Idade",
+          value = NA,
+          min = 18,
+          max = 100
+        ),
+        
+        numericInput(
+          "renda",
+          "Renda mensal (R$)",
+          value = NA,
+          min = 0,
+          step = 500
+        ),
+        
+        ),
+
+      br(),
+
+      div(
+        style = "text-align: center;",
+        actionButton(
+          "calcular",
+          "Calcular capital segurado ideal",
+          class = "btn-primary"
         )
-      )
-      
-    ),
+      ),       
+    ), # end tabPanel pg01
     
     tabPanel( # Página 2 - Tela que mostra o capital recomendado.
       "Capital recomendado",
