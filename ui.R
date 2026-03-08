@@ -1,40 +1,19 @@
 ui <- fluidPage(
   
   titlePanel("Simulador de Seguro de Vida"),
-  
+
+
+  #Imagem de fundo séria, será que não tem uma mais legal ?
+  #url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85')
+
   tags$head(
-    tags$style(HTML("
-      
-      body {
-        background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-      }
-      
-      .form-card {
-        background-color: rgba(255,255,255,0.95);
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-        max-width: 500px;
-        margin: auto;
-        margin-top: 80px;
-      }
-      
-      .titulo-card {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      
-    "))
-  ),
+      tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")
+    ),
 
   tabsetPanel(
 
     id = "paginas",
 
-    
     tabPanel(
       "Seus dados",
       value = "pg01",
@@ -85,51 +64,131 @@ ui <- fluidPage(
         actionButton(
           "calcular",
           "Calcular capital segurado ideal",
-          class = "btn-primary"
+          class = "btn-navegacao"
         )
       ),       
     ), # end tabPanel pg01
     
-    tabPanel( # Página 2 - Tela que mostra o capital recomendado.
-      "Capital recomendado",
-      value = "pg02",
+    tabPanel(
+  "Capital recomendado",
+  value = "pg02",
+  
+  div(class="resultado-container",
+      
+      # título da seção
+      
+      div(class="resultado-header",
+          h2("Proteção financeira para quem depende de você")
+      ),
       
       fluidRow(
+        
+        column(
+          width = 4,
+          
+          tags$img(
+            src="pg03_familia.jpg",
+            width="100%"
+          )
+        ),
+        
         column(
           width = 8,
           
-          h2("Seu capital segurado recomendado"),
+          div(class="card-resultado",
+              
+              h3("Capital segurado recomendado"),
+              
+              div(class="capital-valor",
+                  textOutput("capital_recomendado")
+              ),
+              
+              p(
+                "Esse valor poderia substituir aproximadamente ",
+                tags$b("20 anos"),
+                " da sua renda atual."
+              )
+          )
+        )
+      ),
+      
+      
+      # explicação
+      
+      div(class="card-explicacao",
           
-          br(),
+          h3("Por que esse valor?"),
           
-          wellPanel(
-            
-            h3(textOutput("capital_texto")),
-            
-            p("Este valor é apenas ilustrativo."),
-            
-            p(
-              "Com base nas informações fornecidas, ",
-              "este seria o capital segurado estimado ",
-              "para garantir proteção financeira aos seus dependentes."
-            )
-            
+          tags$ul(class="lista-explicacao",
+                  tags$li("sua renda mensal informada"),
+                  tags$li("sua idade atual"),
+                  tags$li("um horizonte de proteção familiar de longo prazo")
           ),
           
-          br(),
+          p(
+            "O objetivo é que sua família tenha tempo para se reorganizar ",
+            "financeiramente sem perda brusca de ",
+            tags$b("padrão de vida.")
+          )
+      ),
+      
+      
+      # simulacoes
+      
+      div(class="simulacoes-container",
+          
+          h3("Simulações de custo do seguro"),
+          
+          p(
+            "Para um capital segurado próximo de ",
+            tags$b(textOutput("capital_recomendado_inline")),
+            ", o custo estimado poderia variar aproximadamente entre:"
+          ),
+          
+          
+          fluidRow(
+            
+            column(
+              4,
+              div(class="card-plano",
+                  h4("Plano Essencial"),
+                  div(class="preco-plano","R$ 85 / mês")
+              )
+            ),
+            
+            column(
+              4,
+              div(class="card-plano",
+                  h4("Plano Proteção Familiar"),
+                  div(class="preco-plano","R$ 120 / mês")
+              )
+            ),
+            
+            column(
+              4,
+              div(class="card-plano",
+                  h4("Plano Premium"),
+                  div(class="preco-plano","R$ 165 / mês")
+              )
+            )
+          )
+      ),
+      
+      br(),
+      
+      div(style="text-align:center;",
           
           actionButton(
             "ver_simulacoes",
-            "Ver simulações de preço",
-            class = "btn-success"
+            "Ver simulações detalhadas",
+            class="btn-navegacao"
           )
-          
-        )
       )
       
-    ),
+  )
+),
     
-    tabPanel( # Página 3 - Tela que mostra as simulações de preço, deve ser permitido alguma simulação.
+tabPanel( # Página 3 - Tela que mostra as simulações de preço, deve ser permitido alguma simulação.
       "Simulações",
       value = "pg03",
       
@@ -156,7 +215,7 @@ ui <- fluidPage(
       actionButton(
         "avaliar",
         "Responder pesquisa de satisfação",
-        class = "btn-primary"
+        class = "btn-navegacao"
       )
       
     ),

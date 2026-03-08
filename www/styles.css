@@ -1,0 +1,106 @@
+body {
+background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+.form-card {
+background-color: rgba(255,255,255,0.95);
+padding: 40px;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+max-width: 500px;
+margin: auto;
+margin-top: 80px;
+}
+
+.titulo-card {
+text-align: center;
+margin-bottom: 30px;
+}
+
+.btn-navegacao {
+background-color: #2C7BE5;
+color: white;
+font-size: 18px;
+padding: 12px 30px;
+border-radius: 12px;
+border: none;
+font-weight: 600;
+box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+transition: all 0.2s ease;
+}
+
+.btn-navegacao:hover {
+background-color: #1A68D1;
+transform: translateY(-2px);
+box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.btn-navegacao:active {
+transform: translateY(1px);
+}
+
+/* Estilos para o texto do capital recomendado */
+
+.resultado-container{
+  max-width:1100px;
+  margin:auto;
+  margin-top:40px;
+  padding:20px;
+}
+
+.resultado-header{
+  margin-bottom:25px;
+}
+
+.card-resultado{
+  background-color: rgba(255,255,255,0.95);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.capital-valor{
+  font-size:48px;
+  color:#2C7BE5;
+  font-weight:700;
+  margin-top:10px;
+}
+
+.card-explicacao{
+  background-color: rgba(255,255,255,0.95);
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  margin-top:25px;
+}
+
+.lista-explicacao{
+  margin-top:15px;
+}
+
+.lista-explicacao li{
+  margin-bottom:10px;
+  font-size:16px;
+}
+
+.simulacoes-container{
+  margin-top:30px;
+}
+
+.card-plano{
+  background-color: rgba(255,255,255,0.95);
+  border-radius:15px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+.preco-plano{
+  font-size:28px;
+  color:#2C7BE5;
+  font-weight:700;
+  margin-top:10px;
+}

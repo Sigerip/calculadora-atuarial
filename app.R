@@ -1,4 +1,5 @@
 library(shiny)
+setwd("~/Projects/calc-oiatuarial")
 
 source("global.R")
 source("ui.R")
